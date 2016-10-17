@@ -10,20 +10,24 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.kmourad.flickr.R.id.list;
+
 public class FlickrAdapter extends BaseAdapter {
     Context context;
-    List<String> list = new ArrayList<String>();
+    List list;
+
 
     // deux listes
 
-    public FlickrAdapter(Context ctx){
+    public FlickrAdapter(Context ctx, List list){
         context = ctx;
-        list.add("aaaaa");
-        list.add("bbbbb");
-        list.add("cccccc");
-        list.add("ddddd");
-        list.add("eeeee");
-        list.add("fffff");
+        this.list = list;
+
+    }
+
+    public void setList(List list){
+        this.list = list;
+        notifyDataSetChanged();
     }
 
     @Override
